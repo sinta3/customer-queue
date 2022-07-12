@@ -1,0 +1,59 @@
+<div class="field">
+    <form action="/page/customer" method="POST">
+    <label class="label">Customer Name</label>
+    <div class="control">
+      <input class="input" type="text" name="customer_name" placeholder="Text input" value="<%= typeof customer_name != 'undefined' ? customer_name : '' %>"
+      >
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label">Address</label>
+    <div class="control">
+      <input class="input" type="text" name="address" placeholder="Text input" value="<%= typeof address != 'undefined' ? address : '' %>">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Visiting Date</label>
+    <div class="control">
+      <input class="input" type="date" name="registration_date" placeholder="Text input" value="<%= typeof registration_date != 'undefined' ? registration_date : '' %>">
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label">Insurance</label>
+    <div class="control">
+      <div class="select">
+        <select name="insurance_id">
+            <% insurance.forEach((i) => {%>
+                <option value="<%= i._id %>" > <%= i.insurance_name %> </option>
+            <%}) %>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label">Description</label>
+    <div class="control">
+      <textarea class="textarea" name="request_description" placeholder="Textarea" value="<%= typeof request_description != 'undefined' ? request_description : '' %>"></textarea>
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label">Phone</label>
+    <div class="control">
+      <input class="input" type="number" name="number" placeholder="Text input" value="<%= typeof number != 'undefined' ? number : '' %>">
+    </div>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link" type="submit">Submit</button>
+    </div>
+    <div class="control">
+      <button class="button is-link is-light" href="/page/home">Cancel</button>
+    </div>
+    </form>
+  </div>
